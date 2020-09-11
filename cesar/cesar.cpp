@@ -3,6 +3,7 @@
 
 #include"func_aux.h"
 #include"div_ent.h"
+#include"cesar_char.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ class cesar {
 public:
     cesar();
     string cifrar(string palabra, int numero);
-    //string descifrar(string palabra, int numero);
+    string descifrar(string palabra, int numero);
 };
 
 cesar::cesar() {
@@ -32,7 +33,7 @@ string cesar::cifrar(string palabra, int numero) {
     return msg;
 }
 
-/*string cesar::descifrar(string palabra, int numero) {
+string cesar::descifrar(string palabra, int numero) {
     int pos;
     string msg = "";
     for (int i = 0; i < palabra.size(); i++) {
@@ -44,25 +45,24 @@ string cesar::cifrar(string palabra, int numero) {
         msg += abc[pos];
     }
     return msg;
-}*/
+}
 
 int main(){
-    cout << "à";
-    //aux();
     string palabra;
     int numero;
     cout << "ingresa la palabra: " << endl;
+    cin.ignore();
     getline(cin, palabra);
     cout << "ingresa el desplazamiento: " << endl;
     cin >> numero;
     cesar prueba;
-    cout << prueba.cifrar(palabra, numero);
-    char a;
-    /*cout << "ingresa la palabra: " << endl;
+    cin.ignore();
+    cout << prueba.cifrar(palabra, numero) << endl;
+    cout << "ingresa la palabra: " << endl;
     cin.ignore();
     getline(cin, palabra);
     cout << "ingresa el desplazamiento: " << endl;
     cin >> numero;
     cesar prueba_2;
-    cout << prueba_2.descifrar(palabra, numero);*/
+    cout << prueba_2.descifrar(palabra, numero);
 }
